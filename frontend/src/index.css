@@ -1,0 +1,260 @@
+:root {
+  --primary: #0074d9;
+  --primary-dark: #005fa3;
+  --primary-darker: #004080;
+  --danger: #ff4d4d;
+  --danger-dark: #d93636;
+  --accent: #ff6600;
+  --bg-light: #f4f7fb;
+  --text-color: #222;
+  --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  --card-radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+button { cursor: pointer; transition: 0.2s; }
+
+/* ── Auth Card ── */
+.auth-card {
+  max-width: 450px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: 0.3s;
+}
+.auth-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+.auth-card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+.auth-card input {
+  display: block;
+  width: 90%;
+  margin: 0.5rem auto;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.auth-card input:focus { border-color: var(--primary); }
+
+.btn-primary {
+  display: block;
+  width: 90%;
+  margin: 0.8rem auto 0;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  text-decoration: underline;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.btn-admin {
+  display: block;
+  width: 90%;
+  margin: 0.5rem auto 0;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: #151269;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btn-admin:hover { background: #0e0c4a; }
+
+.auth-msg { margin-top: 0.8rem; color: var(--danger); font-size: 0.9rem; min-height: 1.2rem; }
+.auth-msg.success { color: green; }
+
+/* ── Main Header ── */
+header.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.main-header .logo { font-size: 1.6rem; font-weight: bold; letter-spacing: 0.5px; }
+.main-header nav button {
+  background: var(--primary-dark);
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+}
+.main-header nav button.active,
+.main-header nav button:hover { background: var(--primary-darker); }
+
+/* ── Notes Section ── */
+.notes-section { padding: 1.5rem 2rem; }
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  background: #fff;
+  padding: 1.3rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 15px rgba(0,0,0,.09);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.note-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.14); transform: translateY(-2px); }
+.note-card h3 { color: var(--primary); font-size: 1.05rem; }
+.note-card p { color: #555; font-size: 0.93rem; }
+.note-card .meta { color: #888; font-size: 0.85rem; }
+.note-card a { color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+.note-card a:hover { text-decoration: underline; }
+.note-card .date { color: #aaa; font-size: 0.8rem; margin-top: auto; }
+
+.btn-delete {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+.btn-delete:hover { background: var(--danger-dark); }
+
+/* ── Upload Card ── */
+.upload-card {
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+}
+.upload-card h2 { color: var(--primary); margin-bottom: 1.2rem; text-align: center; }
+.upload-card input,
+.upload-card textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  font-family: inherit;
+}
+.upload-card input:focus,
+.upload-card textarea:focus { border-color: var(--primary); }
+.upload-card textarea { resize: vertical; min-height: 90px; }
+.upload-card .btn-primary { width: 100%; margin-top: 0.8rem; }
+.upload-msg { margin-top: 0.8rem; text-align: center; font-size: 0.9rem; color: #333; }
+.upload-msg.success { color: green; }
+.upload-msg.error { color: var(--danger); }
+
+/* ── Search Bar ── */
+.search-bar {
+  display: block;
+  margin: 1rem auto 1.8rem;
+  padding: 0.75rem 1.1rem;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 0.97rem;
+  outline: none;
+  transition: 0.2s;
+}
+.search-bar:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(0,116,217,.25);
+}
+
+/* ── Admin Header ── */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #151269;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.admin-header .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 0.5px; }
+.admin-header button {
+  background: var(--accent);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+}
+.admin-header button:hover { background: #e65c00; }
+
+.admin-main { max-width: 1200px; margin: 2rem auto; padding: 0 2rem 2rem; }
+.admin-main h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #151269;
+  border-left: 5px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* ── Empty / Loading States ── */
+.empty-state { color: #999; padding: 3rem; text-align: center; font-size: 1rem; }
+.loading { color: #aaa; padding: 2rem; text-align: center; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  header.main-header, .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+  .main-header nav { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .notes-grid { grid-template-columns: 1fr; }
+  .search-bar { width: 90%; }
+  .admin-main { padding: 0 1rem 2rem; }
+}
