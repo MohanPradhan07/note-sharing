@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API = "/api";
+const API = process.env.VITE_API_URL;
 
 export default function AuthPage() {
   const { login, adminLogin } = useAuth();
