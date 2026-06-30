@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API = process.env.VITE_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 // Decode JWT payload without a library
 function parseJwt(token) {
