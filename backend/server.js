@@ -10,10 +10,8 @@ const app = express();
 connectDB(process.env.MONGODB_URL);
 
 // ----------------- Middleware -----------------
-app.use(cors({
-  origin: ["http://localhost:3001", "http://localhost:3000"],
-  credentials: true,
-}));app.use(express.json());
+app.use(cors({ origin: "*" }));
+app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ----------------- Routes -----------------
