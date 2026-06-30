@@ -149,13 +149,12 @@ export default function NotesPage() {
                   <p className="meta">
                     <b>By:</b> {note.author?.username || "Unknown"}
                   </p>
-                  {note.file && (
-                    <a
-                      href={`http://localhost:3000/uploads/${note.file.filename}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                       View 
+                 {note.file && (
+                    href={`${API}/uploads/${note.file.filename}`}
+                    target="_blank"
+                    rel="noreferrer"
+                      >
+                  📎 View File
                     </a>
                   )}
                   {note.createdAt && <p className="date">{formatDate(note.createdAt)}</p>}
