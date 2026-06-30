@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API = process.env.REACT_APP_API_URL;
+const API = "http://localhost:3000/api";
 
 // Decode JWT payload without a library
 function parseJwt(token) {
@@ -149,15 +149,15 @@ export default function NotesPage() {
                   <p className="meta">
                     <b>By:</b> {note.author?.username || "Unknown"}
                   </p>
-                {note.file && (
-  <a
-    href={`${API}/uploads/${note.file.filename}`}
-    target="_blank"
-    rel="noreferrer"
-  >
-    📎 View File
-  </a>
-)}
+                  {note.file && (
+                    <a
+                      href={note.file.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      📎 View File
+                    </a>
+                  )}
                   {note.createdAt && <p className="date">{formatDate(note.createdAt)}</p>}
 
                   {note.author?._id === currentUserId && (

@@ -6,9 +6,9 @@ const NoteSchema = new mongoose.Schema({
   author: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   file: {
     originalname: String,
-    filename: String,
+    filename: String,   // Cloudinary public_id (used to delete)
     mimetype: String,
-    path: String,
+    url: String,        // Cloudinary secure URL (used to view)
   },
   createdAt: { type: Date, default: Date.now },
 });

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-const API = process.env.REACT_APP_API_URL;
+
+const API = "http://localhost:3000/api";
 
 export default function AdminPage() {
   const { adminToken, adminLogout } = useAuth();
@@ -103,7 +104,7 @@ export default function AdminPage() {
                 </p>
                 {note.file && (
                   <a
-                    href={`${API}/uploads/${note.file.filename}`}
+                    href={note.file.url}
                     target="_blank"
                     rel="noreferrer"
                   >

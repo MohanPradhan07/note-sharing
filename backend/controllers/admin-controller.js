@@ -1,8 +1,7 @@
-const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const Note = require("../models/note");
+const { cloudinary } = require("../config/cloudinary");
 
-// Hardcoded admin credentials — move to .env for production
 const ADMIN = {
   username: process.env.ADMIN_USERNAME || "admin",
   password: process.env.ADMIN_PASSWORD || "admin123",
@@ -36,15 +35,19 @@ exports.deleteNote = async (req, res) => {
     const note = await Note.findById(req.params.id);
     if (!note) return res.status(404).json({ success: false, message: "Note not found" });
 
-    if (note.file && note.file.path) {
-      fs.unlink(note.file.path, (err) => {
-        if (err) console.log("File delete error:", err);
-      });
+    // Delete file from Cloudinary — don't let this block note deletion
+    if (note.file && note.file.filename) {
+      try {
+        await cloudinary.uploader.destroy(note.file.filename, { resource_type: "auto" });
+      } catch (cloudErr) {
+        console.log("Cloudinary delete warning:", cloudErr.message);
+      }
     }
 
     await note.deleteOne();
     res.json({ success: true, message: "Note deleted successfully" });
   } catch (err) {
+    console.error("Admin delete note error:", err);
     res.status(500).json({ success: false, message: "Error deleting note" });
   }
 };
