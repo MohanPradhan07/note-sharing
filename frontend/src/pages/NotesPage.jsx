@@ -149,14 +149,15 @@ export default function NotesPage() {
                   <p className="meta">
                     <b>By:</b> {note.author?.username || "Unknown"}
                   </p>
-                 {note.file && (
-                    href={`${API}/uploads/${note.file.filename}`}
-                    target="_blank"
-                    rel="noreferrer"
-                      >
-                  📎 View File
-                    </a>
-                  )}
+                {note.file && (
+  <a
+    href={`${API}/uploads/${note.file.filename}`}
+    target="_blank"
+    rel="noreferrer"
+  >
+    📎 View File
+  </a>
+)}
                   {note.createdAt && <p className="date">{formatDate(note.createdAt)}</p>}
 
                   {note.author?._id === currentUserId && (
