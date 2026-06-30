@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API = "/api";
+const API = process.env.VITE_API_URL;
 
 export default function AdminPage() {
   const { adminToken, adminLogout } = useAuth();
@@ -104,7 +104,7 @@ export default function AdminPage() {
                 </p>
                 {note.file && (
                   <a
-                    href={`http://localhost:3000/uploads/${note.file.filename}`}
+                    href={`${API}/uploads/${note.file.filename}`}
                     target="_blank"
                     rel="noreferrer"
                   >
