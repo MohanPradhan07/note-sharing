@@ -4,6 +4,7 @@ A full-stack note sharing platform built using MongoDB, Express, React, Node.js,
 Users can register, login, upload notes with files, view notes, and delete their own notes.
 Admin can manage all notes.
 
+---
 
 ## 🚀 Features
 👤 User registration & login (JWT auth)
@@ -15,6 +16,7 @@ Admin can manage all notes.
 🗑️ Delete own notes / admin delete all notes
 ⚡ Secure REST API with authentication
 
+---
 
 ## 🛠️ Tech Stack
 
@@ -35,6 +37,8 @@ Multer
 
 ### Cloud Storage:
 Cloudinary
+
+---
 
 ## 📁 Project Structure
 ```
@@ -57,9 +61,12 @@ project-root/
 └── README.md
 ```
 ---
+
 ## 🌐 Live Demo
 
 🔗 **[Live Demo](https://note-sharing-six.vercel.app/)**
+
+---
 
 ## 👨‍💻 Author
 
@@ -68,6 +75,5 @@ project-root/
 - 📧 Email: pradhanmohan058@gmail.com  
 - 💼 **LinkedIn**: [mohan-pradhan](https://www.linkedin.com/in/mohan-pradhan-32a980334/)
 - 🐙 **GitHub**: [MohanPradhan07](https://github.com/MohanPradhan07/)
-
 
 ---
