@@ -1,38 +1,59 @@
-# 📘 NoteShare — Full Stack Project
+# 📘 NoteShare (MERN Stack App)
 
-A notes sharing system with user auth, file uploads, and an admin panel.
+A full-stack note sharing platform built using MongoDB, Express, React, Node.js, and Cloudinary.
+Users can register, login, upload notes with files, view notes, and delete their own notes.
+Admin can manage all notes.
 
-## Tech Stack
-- **Backend:** Node.js, Express, MongoDB (Mongoose), JWT, Multer, bcrypt
-- **Frontend:** React 18, React Router v6, Fetch API
 
----
+## 🚀 Features
+👤 User registration & login (JWT auth)
+🔐 Admin login system
+📤 Upload notes with files (PDF, images, docs)
+☁️ Cloudinary file storage
+📚 View all notes
+🔍 Search notes by title
+🗑️ Delete own notes / admin delete all notes
+⚡ Secure REST API with authentication
+
+## 🛠️ Tech Stack
+
+### Frontend:
+
+React.js
+React Router
+Fetch API
+Context API
+
+### Backend:
+
+Node.js
+Express.js
+MongoDB + Mongoose
+JWT Authentication
+Multer
+
+### Cloud Storage:
+Cloudinary
 
 ## 📁 Project Structure
 
-```
-noteshare-full/
-├── backend/               ← Express + MongoDB API
-│   ├── config/db.js
+project-root/
+│
+├── backend/
+│   ├── config/
 │   ├── controllers/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
-│   ├── uploads/           ← auto-created on first upload
-│   ├── .env.example
-│   └── server.js
+│   ├── server.js
 │
-└── frontend/              ← React SPA
-    ├── public/
-    └── src/
-        ├── context/AuthContext.jsx
-        ├── pages/
-        │   ├── AuthPage.jsx
-        │   ├── NotesPage.jsx
-        │   └── AdminPage.jsx
-        ├── App.jsx
-        └── index.css
-```
+├── frontend/
+│   ├── src/
+│       ├── pages/
+│       ├── context/
+│       ├── App.js
+│
+└── README.md
 
 ---
 
