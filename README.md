@@ -7,14 +7,14 @@ Admin can manage all notes.
 ---
 
 ## 🚀 Features
-👤 User registration & login (JWT auth)
-🔐 Admin login system
-📤 Upload notes with files (PDF, images, docs)
-☁️ Cloudinary file storage
-📚 View all notes
-🔍 Search notes by title
-🗑️ Delete own notes / admin delete all notes
-⚡ Secure REST API with authentication
+-👤 User registration & login (JWT auth)
+-🔐 Admin login system
+-📤 Upload notes with files (PDF, images, docs)
+-☁️ Cloudinary file storage
+-📚 View all notes
+-🔍 Search notes by title
+-🗑️ Delete own notes / admin delete all notes
+-⚡ Secure REST API with authentication
 
 ---
 
