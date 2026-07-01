@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const API = "http://localhost:3000/api";
+const API = "https://note-sharing-k98b.onrender.com/api";
 
 export default function AuthPage() {
   const { login, adminLogin } = useAuth();
